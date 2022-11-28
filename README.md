@@ -3,4 +3,4 @@ Mi Proyecto Final
 
 ## Arrancamos con Django
 
-Review de Clase Django
+Review de Clase Django 27.11.22
