@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,20 @@
 </head>
 
 <body>
-    {{resultado}}
+    <h1>buscar familiar por nombre</h1>
+    
+    <form action="/mi-familia/buscar" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form>
+
+    {% for familiar in lista_familiares %}
+    <ul>
+       <li> Nombre: {{familiar.nombre}}, Dirección: {{familiar.direccion}}, Pasaporte: {{familiar.numero_pasaporte}}, Nacimiento: {{familiar.fecha_nacimiento}}</li>
+    </ul>
+    {% endfor %}
+
 </body>
 
 </html>
