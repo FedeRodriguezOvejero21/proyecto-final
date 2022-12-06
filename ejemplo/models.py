@@ -12,4 +12,5 @@ class Familiar(models.Model):
     
 
 class Dummy(models.Model):
-    nombre=models.CharField(max_length=100)      
+    nombre=models.CharField(max_length=100)   
+   
