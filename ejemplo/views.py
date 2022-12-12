@@ -70,7 +70,7 @@ class AltaFamiliar(View):
         form = self.form_class(request.POST)
         if form.is_valid():
             form.save()
-            msg_exito = f"se cargo con éxito el familiar {form.cleaned_data.get('nombre')}"
+            msg_exito = f"Se cargo con éxito el familiar {form.cleaned_data.get('nombre')}"
             form = self.form_class(initial=self.initial)
             return render(request, self.template_name, {'form':form, 
                                                         'msg_exito': msg_exito})
@@ -81,27 +81,28 @@ class AltaFamiliar(View):
 class ActualizarFamiliar(View):
   form_class = FamiliarForm
   template_name = 'ejemplo/actualizar_familiar.html'
-  initial = {"nombre":"", "direccion":"", "numero_pasaporte":""}
+  initial = {"nombre":"", "direccion":"", "numero_pasaporte":"","fecha_nacimiento":""}
   
-  # prestar atención ahora el method get recibe un parametro pk == primaryKey == identificador único
+  
   def get(self, request, pk): 
       familiar = get_object_or_404(Familiar, pk=pk)
       form = self.form_class(instance=familiar)
       return render(request, self.template_name, {'form':form,'familiar': familiar})
 
-  # prestar atención ahora el method post recibe un parametro pk == primaryKey == identificador único
+ 
   def post(self, request, pk): 
       familiar = get_object_or_404(Familiar, pk=pk)
       form = self.form_class(request.POST ,instance=familiar)
       if form.is_valid():
           form.save()
-          msg_exito = f"se actualizó con éxito el familiar {form.cleaned_data.get('nombre')}"
+          msg_exito = f"Se actualizó con éxito el familiar {form.cleaned_data.get('nombre')}"
           form = self.form_class(initial=self.initial)
           return render(request, self.template_name, {'form':form, 
                                                       'familiar': familiar,
                                                       'msg_exito': msg_exito})
       
       return render(request, self.template_name, {"form": form}) 
+
 
 class BorrarFamiliar(View):
   template_name = 'ejemplo/familiares.html'

@@ -2,13 +2,14 @@
 {% block titulo%} Alta de nuevo Familiar {% endblock %}
 {% block contenido %}
   
-  <form action="/mi-familia/alta" method="post">
+<form action="/mi-familia/alta" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Submit">
-  </form>
+</form>
 
-  <h2 style="color:green">{{msg_exito}}</h2>
+<h2 style="color:green">{{msg_exito}}</h2>
+
 <a href="/mi_familia">Volver a la lista de familia</a>
 
 {% endblock %}

@@ -5,7 +5,7 @@
 <!-- Prestar aatención a la variable familiar.id -->
 <form action="/mi-familia/actualizar/{{ familiar.id }}" method="post"> 
     {% csrf_token %}
-    {{ form }}
+    {{ form.as_p }}
     <input type="submit" value="Submit">
 </form>
 
