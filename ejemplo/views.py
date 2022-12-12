@@ -60,7 +60,7 @@ class AltaFamiliar(View):
 
     form_class = FamiliarForm
     template_name = 'ejemplo/alta_familiar.html'
-    initial = {"nombre":"", "direccion":"", "numero_pasaporte":""}
+    initial = {"nombre":"", "direccion":"", "numero_pasaporte":"","fecha_nacimiento":""}
 
     def get(self, request):
         form = self.form_class(initial=self.initial)
