@@ -31,3 +31,4 @@ urlpatterns = [
     path('mi-familia/actualizar/<int:pk>', ActualizarFamiliar.as_view()),
     path('mi-familia/borrar/<int:pk>', BorrarFamiliar.as_view())
 ]
+ 

@@ -6,7 +6,7 @@ class Familiar(models.Model):
     direccion = models.CharField(max_length=200)
     numero_pasaporte = models.IntegerField()
     fecha_nacimiento= models.DateField()
-
+  
     def __str__(self):
       return f"{self.nombre}, {self.numero_pasaporte}, {self.id}, {self.fecha_nacimiento}"
     
