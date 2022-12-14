@@ -6,7 +6,7 @@ Lista de Familiares
 {% block contenido %}
      <a href="/mi-familia/alta">Nuevo familiar</a>
     <ul>
-    {% for familiar in lista_familiares %} 
+{% for familiar in lista_familiares %} 
         <li>
             Id: {{familiar.id}} Nombre: {{familiar.nombre}}, Dirección: {{familiar.direccion}}, Pasaporte: {{familiar.numero_pasaporte}}, Nacimiento: {{familiar.fecha_nacimiento}}
             <a href='/mi-familia/actualizar/{{ familiar.id }}'>Actualizar</a>
