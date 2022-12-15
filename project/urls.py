@@ -20,8 +20,7 @@ from ejemplo.views import (index, saludar_a, sumar,
                            buscar, mostrar_familiares,BuscarFamiliar,
                            AltaFamiliar,ActualizarFamiliar,BorrarFamiliar,
                            FamiliarList,FamiliarCrear,FamiliarBorrar,FamiliarActualizar)
-from ejemplo_dos.views import index
-from ejemplo_dos.views import PostList,PostCrear
+from ejemplo_dos.views import index, PostList, PostCrear
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -38,7 +37,7 @@ urlpatterns = [
     path('panel-familia/crear', FamiliarCrear.as_view()),
     path('panel-familia/<int:pk>/borrar', FamiliarBorrar.as_view()),
     path('panel-familia/<int:pk>/actualizar', FamiliarActualizar.as_view()),
-    path('/success_updated_message/', TemplateView.as_view(template_name="ejemplo/success_updated_message.html")),
+    path('success_updated_message/', TemplateView.as_view(template_name="ejemplo/success_updated_message.html")),
     #Mascota
     #path("mi-familia/", mostrar_familiares),
     #path("mi-familia/buscar", BuscarFamiliar.as_view()),
@@ -59,9 +58,10 @@ urlpatterns = [
     #path('panel-familia/crear', FamiliarCrear.as_view()),
     #path('panel-familia/<int:pk>/borrar', FamiliarBorrar.as_view()),
     #path('panel-familia/<int:pk>/actualizar', FamiliarActualizar.as_view()),
+    
     #ejemplo dos clase 141222
-    path("ejemplo-dos/", index,name="ejemplo_dos-index"),
-    path("ejemplo-dos/listar/posts", PostList.as_view(),name="ejemplo_dos-listar"),
-    path("ejemplo-dos/crear/", PostCrear.as_view(),name="ejemplo_dos-crear"),
+    path("ejemplo-dos/", index,name="ejemplo-dos-index"),
+    path("ejemplo-dos/listar/", PostList.as_view(),name="ejemplo-dos-listar"),
+    path("ejemplo-dos/crear/", PostCrear.as_view(),name="ejemplo-dos-crear"),
 ]
  

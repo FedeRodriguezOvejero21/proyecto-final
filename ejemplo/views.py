@@ -32,7 +32,7 @@ def buscar(request):
         resultado=lista_de_nombre[indice_de_resultado]
     else:
         resultado= "No hay match"
-    return render(request, "ejemplo/buscar.html",{"resultado":resultado})
+    return render(request, "ejemplo/buscar.html", {"resultado":resultado})
 
 
 def mostrar_familiares(request):

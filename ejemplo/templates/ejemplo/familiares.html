@@ -8,7 +8,7 @@ Lista de Familiares
     <ul>
 {% for familiar in lista_familiares %} 
         <li>
-            Id: {{familiar.id}} Nombre: {{familiar.nombre}}, Dirección: {{familiar.direccion}}, Pasaporte: {{familiar.numero_pasaporte}}, Nacimiento: {{familiar.fecha_nacimiento}}
+            Id: {{familiar.id}}--Nombre: {{familiar.nombre}}--Dirección: {{familiar.direccion}}--Pasaporte: {{familiar.numero_pasaporte}}--Nacimiento: {{familiar.fecha_nacimiento}}
             <a href='/mi-familia/actualizar/{{ familiar.id }}'>Actualizar</a>
             <a href='/mi-familia/borrar/{{ familiar.id }}'>Borrar</a>
     </li>

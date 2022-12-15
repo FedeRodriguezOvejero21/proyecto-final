@@ -1,9 +1,8 @@
 {%extends "ejemplo_dos/base.html" %}
-{%block contenido%}
-
+{% block contenido %}
 <form method="POST">
-    {%csrf_token%}
+    {% csrf_token %}
     {{form.as_p}}
-    <input type="Submit" value= "Postear"
+    <input type="submit" value= "Postear">
 </form>
-{%endblock%}
+{% endblock %}
