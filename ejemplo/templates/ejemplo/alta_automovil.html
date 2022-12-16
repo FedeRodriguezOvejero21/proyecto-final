@@ -2,7 +2,7 @@
 {% block titulo%} Alta de nuevo Automovil {% endblock %}
 {% block contenido %}
   
-<form action="/mi-familia/alta" method="post">
+<form action="/panel-automovil/alta" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Submit">
