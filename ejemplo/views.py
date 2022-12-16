@@ -1,6 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from ejemplo.models import Familiar
 from ejemplo.forms import Buscar, FamiliarForm
+from ejemplo.models import Automovil
+from ejemplo.forms import Buscar, AutomovilForm
+from ejemplo.models import Mascota
+from ejemplo.forms import Buscar, MascotaForm
 from django.views import View
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 
@@ -134,3 +138,41 @@ class FamiliarActualizar(UpdateView):
     model = Familiar
     success_url = "/success_updated_message"
     fields = ["nombre", "direccion", "numero_pasaporte", "fecha_nacimiento"]
+
+#automovil
+
+class AutomovilList(ListView):
+    model = Automovil
+
+class AutomovilCrear(CreateView):
+    model = Automovil
+    success_url = "/panel-automovil"
+    fields = ["marca", "modelo", "color","cantidad_de_puertas", "fecha_patentamiento"]
+
+class AutomovilBorrar(DeleteView):
+    model = Automovil
+    success_url = "/panel-automovil"
+
+class AutomovilActualizar(UpdateView):
+    model = Automovil
+    success_url = "/success_updated_message"
+    fields = ["marca", "modelo", "color","cantidad_de_puertas", "fecha_patentamiento"]
+
+#mascota
+
+class MascotaList(ListView):
+    model = Mascota
+
+class MascotaCrear(CreateView):
+    model = Mascota
+    success_url = "/panel-mascota"
+    fields = ["nombre", "animal", "edad", "fecha_adopcion"]
+
+class MascotaBorrar(DeleteView):
+    model = Mascota
+    success_url = "/panel-mascota"
+
+class MascotaActualizar(UpdateView):
+    model = Mascota
+    success_url = "/success_updated_message"
+    fields = ["nombre", "animal", "edad", "fecha_adopcion"]

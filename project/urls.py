@@ -20,6 +20,10 @@ from ejemplo.views import (index, saludar_a, sumar,
                            buscar, mostrar_familiares,BuscarFamiliar,
                            AltaFamiliar,ActualizarFamiliar,BorrarFamiliar,
                            FamiliarList,FamiliarCrear,FamiliarBorrar,FamiliarActualizar)
+from ejemplo.views import (index,
+                           AutomovilList,AutomovilCrear,AutomovilBorrar,AutomovilActualizar)
+from ejemplo.views import (index,
+                           MascotaList,MascotaCrear,MascotaBorrar,MascotaActualizar)
 from ejemplo_dos.views import index, PostList, PostCrear
 
 urlpatterns = [
@@ -39,26 +43,16 @@ urlpatterns = [
     path('panel-familia/<int:pk>/actualizar', FamiliarActualizar.as_view()),
     path('success_updated_message/', TemplateView.as_view(template_name="ejemplo/success_updated_message.html")),
     #Mascota
-    #path("mi-familia/", mostrar_familiares),
-    #path("mi-familia/buscar", BuscarFamiliar.as_view()),
-    #path("mi-familia/alta", AltaFamiliar.as_view()),
-    #path('mi-familia/actualizar/<int:pk>', ActualizarFamiliar.as_view()),
-    #path('mi-familia/borrar/<int:pk>', BorrarFamiliar.as_view()),
-    #path('panel-familia/', FamiliarList.as_view()),
-    #path('panel-familia/crear', FamiliarCrear.as_view()),
-    #path('panel-familia/<int:pk>/borrar', FamiliarBorrar.as_view()),
-    #path('panel-familia/<int:pk>/actualizar', FamiliarActualizar.as_view()),
+    path('panel-mascota/', MascotaList.as_view()),
+    path('panel-mascota/crear', MascotaCrear.as_view()),
+    path('panel-mascota/<int:pk>/borrar', MascotaBorrar.as_view()),
+    path('panel-mascota/<int:pk>/actualizar', MascotaActualizar.as_view()),
     #Automovil
-    #path("mi-familia/", mostrar_familiares),
-    #path("mi-familia/buscar", BuscarFamiliar.as_view()),
-    #path("mi-familia/alta", AltaFamiliar.as_view()),
-    #path('mi-familia/actualizar/<int:pk>', ActualizarFamiliar.as_view()),
-    #path('mi-familia/borrar/<int:pk>', BorrarFamiliar.as_view()),
-    #path('panel-familia/', FamiliarList.as_view()),
-    #path('panel-familia/crear', FamiliarCrear.as_view()),
-    #path('panel-familia/<int:pk>/borrar', FamiliarBorrar.as_view()),
-    #path('panel-familia/<int:pk>/actualizar', FamiliarActualizar.as_view()),
-    
+    path('panel-automovil/', AutomovilList.as_view()),
+    path('panel-automovil/crear', AutomovilCrear.as_view()),
+    path('panel-automovil/<int:pk>/borrar', AutomovilBorrar.as_view()),
+    path('panel-automovil/<int:pk>/actualizar', AutomovilActualizar.as_view()),
+
     #ejemplo dos clase 141222
     path("ejemplo-dos/", index,name="ejemplo-dos-index"),
     path("ejemplo-dos/listar/", PostList.as_view(),name="ejemplo-dos-listar"),

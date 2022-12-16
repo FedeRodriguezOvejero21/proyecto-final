@@ -1,0 +1,16 @@
+{% extends 'ejemplo/base.html' %}
+{% block titulo%} Modificar un automovil {% endblock %}
+{% block contenido %}
+
+<!-- Prestar aatención a la variable automovil.id -->
+<form action="/panel-automovil/actualizar/{{ automovil.id }}" method="post"> 
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
+
+<h2 style="color:green">{{msg_exito}}</h2>
+
+<a href="/panel-automovil" >Volver a la lista de automoviles</a>
+
+{% endblock %}
