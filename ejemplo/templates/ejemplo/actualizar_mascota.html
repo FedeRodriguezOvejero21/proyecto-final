@@ -1,9 +1,9 @@
-{% extends 'ejemplo/base.html' %}
+{% extends 'ejemplo/base_mascota.html' %}
 {% block titulo%} Modificar una mascota {% endblock %}
 {% block contenido %}
 
 <!-- Prestar aatención a la variable mascota.id -->
-<form action="/panel-mascota/actualizar/{{ mascota.id }}" method="post"> 
+<form action="/mis-mascotas/actualizar/{{ mascota.id }}" method="post"> 
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Submit">
@@ -11,6 +11,6 @@
 
 <h2 style="color:green">{{msg_exito}}</h2>
 
-<a href="/panel-mascota" >Volver a la lista de mascotas</a>
+<a href="/mis-mascotas" >Volver a la lista de mascotas</a>
 
 {% endblock %}

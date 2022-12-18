@@ -1,16 +1,16 @@
-{% extends 'ejemplo/base.html' %}
+{% extends 'ejemplo/base_automovil.html' %}
 
 {% block titulo %}
 Lista de Automoviles
 {%endblock %}
 {% block contenido %}
-     <a href="/automoviles/alta">Nuevo automovil</a>
+     <a href="/mis-automoviles/alta">Nuevo automovil</a>
     <ul>
-{% for automovil in lista_autmoviles %} 
+{% for automovil in lista_automoviles %} 
         <li>
             Id: {{automovil.id}}--Marca: {{automovil.marca}}--Modelo: {{automovil.modelo}}--Color: {{automovil.color}}--Cantidad de Puertas: {{automovil.cantidad_de_puertas}}--Fecha patentamiento: {{automovil.fecha_patentamiento}}
-            <a href='/automoviles/actualizar/{{ automovil.id }}'>Actualizar</a>
-            <a href='/automoviles/borrar/{{ automovil.id }}'>Borrar</a>
+            <a href='/mis-automoviles/actualizar/{{ automovil.id }}'>Actualizar</a>
+            <a href='/mis-automoviles/borrar/{{ automovil.id }}'>Borrar</a>
     </li>
     {% endfor %}
     </ul> 

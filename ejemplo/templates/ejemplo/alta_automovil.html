@@ -1,8 +1,8 @@
-{% extends 'ejemplo/base.html' %}
+{% extends 'ejemplo/base_automovil.html' %}
 {% block titulo%} Alta de nuevo Automovil {% endblock %}
 {% block contenido %}
   
-<form action="/panel-automovil/alta" method="post">
+<form action="/mis-automoviles/alta" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Submit">

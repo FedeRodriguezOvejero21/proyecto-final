@@ -2,7 +2,7 @@
 {% block titulo%} Alta de nueva mascota {% endblock %}
 {% block contenido %}
   
-<form action="/mi-familia/alta" method="post">
+<form action="/mis-mascotas/alta" method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Submit">
@@ -10,6 +10,6 @@
 
 <h2 style="color:green">{{msg_exito}}</h2>
 
-<a href="/mis-automoviles">Volver a la lista de mascotas</a>
+<a href="/mis-mascotas">Volver a la lista de mascotas</a>
 
 {% endblock %}

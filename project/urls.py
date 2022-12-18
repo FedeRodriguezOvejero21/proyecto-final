@@ -21,9 +21,9 @@ from ejemplo.views import (index, saludar_a, sumar,
                            AltaFamiliar,ActualizarFamiliar,BorrarFamiliar,
                            FamiliarList,FamiliarCrear,FamiliarBorrar,FamiliarActualizar)
 from ejemplo.views import (index,
-                           AutomovilList,AutomovilCrear,AutomovilBorrar,AutomovilActualizar)
+                           mostrar_automoviles,BuscarAutomovil, AltaAutomovil, ActualizarAutomovil, BorrarAutomovil)
 from ejemplo.views import (index,
-                           MascotaList,MascotaCrear,MascotaBorrar,MascotaActualizar)
+                           mostrar_mascotas,BuscarMascotas, AltaMascotas, ActualizarMascotas, BorrarMascotas)
 from ejemplo_dos.views import index, PostList, PostCrear
 
 urlpatterns = [
@@ -42,16 +42,28 @@ urlpatterns = [
     path('panel-familia/<int:pk>/borrar', FamiliarBorrar.as_view()),
     path('panel-familia/<int:pk>/actualizar', FamiliarActualizar.as_view()),
     path('success_updated_message/', TemplateView.as_view(template_name="ejemplo/success_updated_message.html")),
-    #Mascota
-    path('panel-mascota/', MascotaList.as_view()),
-    path('panel-mascota/crear', MascotaCrear.as_view()),
-    path('panel-mascota/<int:pk>/borrar', MascotaBorrar.as_view()),
-    path('panel-mascota/<int:pk>/actualizar', MascotaActualizar.as_view()),
+    
     #Automovil
-    path('panel-automovil/', AutomovilList.as_view()),
-    path('panel-automovil/crear', AutomovilCrear.as_view()),
-    path('panel-automovil/<int:pk>/borrar', AutomovilBorrar.as_view()),
-    path('panel-automovil/<int:pk>/actualizar', AutomovilActualizar.as_view()),
+    path("mis-automoviles/", mostrar_automoviles),
+    path("mis-automoviles/buscar", BuscarAutomovil.as_view()),
+    path("mis-automoviles/alta", AltaAutomovil.as_view()),
+    path('mis-automoviles/actualizar/<int:pk>', ActualizarAutomovil.as_view()),
+    path('mis-automoviles/borrar/<int:pk>', BorrarAutomovil.as_view()),
+    #path('panel-automovil/', AutomovilList.as_view()),
+    #path('panel-automovil/crear', AutomovilCrear.as_view()),
+    #path('panel-automovil/<int:pk>/borrar', AutomovilBorrar.as_view()),
+    #path('panel-automovil/<int:pk>/actualizar', AutomovilActualizar.as_view()),
+
+    #Mascota
+    path("mis-mascotas/", mostrar_mascotas),
+    path("mis-mascotas/buscar", BuscarMascotas.as_view()),
+    path("mis-mascotas/alta", AltaMascotas.as_view()),
+    path('mis-mascotas/actualizar/<int:pk>', ActualizarMascotas.as_view()),
+    path('mis-mascotas/borrar/<int:pk>', BorrarMascotas.as_view()),
+    #path('panel-mascota/', MascotaList.as_view()),
+    #path('panel-mascota/crear', MascotaCrear.as_view()),
+    #path('panel-mascota/<int:pk>/borrar', MascotaBorrar.as_view()),
+    #path('panel-mascota/<int:pk>/actualizar', MascotaActualizar.as_view()),
 
     #ejemplo dos clase 141222
     path("ejemplo-dos/", index,name="ejemplo-dos-index"),
