@@ -9,12 +9,12 @@ Pasos a seguir:
 5-copiar la url que devuelve el programa que comienza con http:// y pegarla en el buscador
 6-para importar algunos datos bases ejecutar el comando python shell y luego tipear import seed_data (aca hay un error en la fecha formato)
 
-Aca tenemos 3 modelos: mi-familia (se carga con ls datos del seed_data), panel-automovil, panel-mascota
+Aca tenemos 3 modelos: mi-familia (se carga con ls datos del seed_data), mis-automoviles, mis-mascotas
 
 Las url sirven de base para crear nuevos datos en cada base,
 http://127.0.0.1:8000/mi-familia/alta
-http://127.0.0.1:8000/panel-mascota/crear
-http://127.0.0.1:8000/panel-automovil/crear
+http://127.0.0.1:8000/mis-mascotas/alta
+http://127.0.0.1:8000/mis-automoviles/alta
 
 Full path de todas las funciones son como debajo (aun no totalmente testeadas)
 
@@ -23,17 +23,15 @@ mi-familia/buscar
 mi-familia/alta
 mi-familia/actualizar/<int:pk>
 mi-familia/borrar/<int:pk>
-panel-familia/
-panel-familia/crear
-panel-familia/<int:pk>/borrar
-panel-familia/<int:pk>/actualizar
-panel-mascota/
-panel-mascota/crear
-panel-mascota/<int:pk>/borrar
-panel-mascota/<int:pk>/actualizar
-panel-automovil/
-panel-automovil/crear
-panel-automovil/<int:pk>/borrar
-panel-automovil/<int:pk>/actualizar
+mis-automoviles/
+mis-automoviles/buscar
+mis-automoviles/alta
+mis-automoviles/actualizar/<int:pk>
+mis-automoviles/borrar/<int:pk>
+mis-mascotas/
+mis-mascotas/buscar
+mis-mascotas/alta
+mis-mascotas/actualizar/<int:pk>
+mis-mascotas/borrar/<int:pk>
 
 Gracias,

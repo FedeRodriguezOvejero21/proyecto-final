@@ -6,7 +6,7 @@ Lista de Mascotas
 {% block contenido %}
      <a href="/mis-mascotas/alta">Nueva mascota</a>
     <ul>
-{% for mascota in lista_mascota %} 
+{% for mascota in lista_mascotas %} 
         <li>
             Id: {{mascota.id}}--Nombre: {{mascota.nombre}}--Animal: {{mascota.animal}}--Edad: {{mascota.edad}}--Fecha adopcion: {{mascota.fecha_adopcion}}
             <a href='/mis-mascotas/actualizar/{{ mascota.id }}'>Actualizar</a>
