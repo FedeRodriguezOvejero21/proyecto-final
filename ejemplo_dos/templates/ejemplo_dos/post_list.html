@@ -1,9 +1,9 @@
-{%extends "ejemplo_dos/base.html"%}
+{% extends 'ejemplo_dos/base.html' %}
 
-{%block contenido%}
+{% block contenido %}
 <ul>
-{%for post in object_list%}
-    <li>{{post.titulo}}<li>
-{%endfor%}
-<ul>
+{% for post in object_list %}
+    <li>{{post.titulo}}</li>
+{% endfor %}
+</ul>
 {%endblock%}

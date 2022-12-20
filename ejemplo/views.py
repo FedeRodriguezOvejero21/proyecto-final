@@ -6,7 +6,7 @@ from ejemplo.forms import Buscar, AutomovilForm
 from ejemplo.models import Mascota
 from ejemplo.forms import Buscar, MascotaForm
 from django.views import View
-from django.views.generic import ListView, CreateView, DeleteView, UpdateView
+from django.views.generic import ListView, CreateView, DeleteView, UpdateView,DetailView
 
 def index(request):
     return render(request, "ejemplo/saludar.html")
@@ -316,18 +316,18 @@ class BorrarMascotas(View):
 #mascotas con List
 
 #class MascotaList(ListView):
-    model = Mascota
+    #model = Mascota
 
 #class MascotaCrear(CreateView):
-    model = Mascota
-    success_url = "/panel-mascota"
-    fields = ["nombre", "animal", "edad", "fecha_adopcion"]
+    #model = Mascota
+    #success_url = "/panel-mascota"
+    #fields = ["nombre", "animal", "edad", "fecha_adopcion"]
 
 #class MascotaBorrar(DeleteView):
-    model = Mascota
-    success_url = "/panel-mascota"
+    #model = Mascota
+    #success_url = "/panel-mascota"
 
 #class MascotaActualizar(UpdateView):
-    model = Mascota
-    success_url = "/success_updated_message"
-    fields = ["nombre", "animal", "edad", "fecha_adopcion"]
+    #model = Mascota
+    #success_url = "/success_updated_message"
+    #fields = ["nombre", "animal", "edad", "fecha_adopcion"]

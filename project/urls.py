@@ -19,12 +19,14 @@ from django.views.generic import TemplateView
 from ejemplo.views import (index, saludar_a, sumar,
                            buscar, mostrar_familiares,BuscarFamiliar,
                            AltaFamiliar,ActualizarFamiliar,BorrarFamiliar,
-                           FamiliarList,FamiliarCrear,FamiliarBorrar,FamiliarActualizar)
+                           FamiliarList,FamiliarCrear,FamiliarBorrar,FamiliarActualizar,DetailView)
 from ejemplo.views import (index,
                            mostrar_automoviles,BuscarAutomovil, AltaAutomovil, ActualizarAutomovil, BorrarAutomovil)
 from ejemplo.views import (index,
                            mostrar_mascotas,BuscarMascotas, AltaMascotas, ActualizarMascotas, BorrarMascotas)
-from ejemplo_dos.views import index, PostList, PostCrear
+from ejemplo_dos.views import (index, PostDetalle, PostListar, 
+                            PostCrear, PostBorrar, PostActualizar, UserSignUp,UserLogin, UserLogout)
+from django.contrib.admin.views.decorators import staff_member_required
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
@@ -41,6 +43,7 @@ urlpatterns = [
     #path('panel-familia/crear', FamiliarCrear.as_view()),
     #path('panel-familia/<int:pk>/borrar', FamiliarBorrar.as_view()),
     #path('panel-familia/<int:pk>/actualizar', FamiliarActualizar.as_view()),
+    #path("panel-familia"/<int:pk>/detalle",FamiliaDetalle.as.view())
     #path('success_updated_message/', TemplateView.as_view(template_name="ejemplo/success_updated_message.html")),
     
     #Automovil
@@ -66,8 +69,14 @@ urlpatterns = [
     #path('panel-mascota/<int:pk>/actualizar', MascotaActualizar.as_view()),
 
     #ejemplo dos clase 141222
-    path("ejemplo-dos/", index,name="ejemplo-dos-index"),
-    path("ejemplo-dos/listar/", PostList.as_view(),name="ejemplo-dos-listar"),
-    path("ejemplo-dos/crear/", PostCrear.as_view(),name="ejemplo-dos-crear"),
+    path("ejemplo-dos/", index,name="ejemplo_dos/index"),
+    path("ejemplo-dos/<int:pk/detalle/", PostDetalle.as_view(),name="ejemplo_dos/detalle"),
+    path("ejemplo-dos/listar/", PostListar.as_view(),name="ejemplo_dos/listar"),
+    path("ejemplo-dos/crear/", PostCrear.as_view(),name="ejemplo_dos/crear"),
+    path("ejemplo-dos/<int:pk/borrar/",PostBorrar.as_view(),name="ejemplo_dos/borrar"),
+    path("ejemplo-dos/<int:pk/actualizar/", PostActualizar.as_view(),name="ejemplo_dos/actualizar"),
+    path("ejemplo-dos/signup/", UserSignUp.as_view(),name="ejemplo-dos-signup"),
+    path("ejemplo-dos/login/", UserLogin.as_view(),name="ejemplo-dos-login"),
+    path("ejemplo-dos/logout/", UserLogout.as_view(),name="ejemplo-dos-logout"),
 ]
  
