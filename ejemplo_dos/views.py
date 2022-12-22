@@ -20,31 +20,31 @@ class PostList(ListView):
 
 class PostCrear(CreateView):
     model= Post
-    success_url= reverse_lazy ("ejemplo-dos/listar")
+    success_url= reverse_lazy ("ejemplo-dos-listar")
     fields= "__all__"
 
 class PostBorrar(DeleteView):
     model= Post
-    success_url= reverse_lazy ("ejemplo-dos/listar")
+    success_url= reverse_lazy ("ejemplo-dos-listar")
     fields= "__all__"
 
 class PostActualizar(UpdateView):
     model= Post
-    success_url= reverse_lazy ("ejemplo-dos/listar")
+    success_url= reverse_lazy ("ejemplo-dos-listar")
     fields= "__all__"
 
 class UserSignUp(CreateView):
     form_class=UsuarioForm
     template_name= "registration/signup.html"
-    success_url=reverse_lazy("ejemplo-dos/listar")
+    success_url=reverse_lazy("ejemplo-dos-listar")
 
 class UserLogin(LoginView):
-    next_page= reverse_lazy("ejemplo-dos/listar")
+    next_page= reverse_lazy("ejemplo-dos-listar")
 
 class UserLogout(LogoutView):
-    next_page= reverse_lazy("ejemplo-dos/listar")
+    next_page= reverse_lazy("ejemplo-dos-listar")
 
 class AvatarActualizar (UpdateView):
     model=Avatar
     fields=["imagen"]
-    succss_url= reverse_lazy("ejemplo-dos/listar")
+    succss_url= reverse_lazy("ejemplo-dos-listar")

@@ -72,7 +72,7 @@ urlpatterns = [
     #path('panel-mascota/<int:pk>/actualizar', MascotaActualizar.as_view()),
 
     #ejemplo dos clase 141222
-    path("ejemplo-dos/", index),
+    path("ejemplo-dos/", index, name="ejemplo-dos-index"),
     path("ejemplo-dos/<int:pk>/detalle/", PostDetalle.as_view(),name="ejemplo-dos-detalle"),
     path("ejemplo-dos/listar/", PostList.as_view(),name="ejemplo-dos-listar"),
     path("ejemplo-dos/crear/", PostCrear.as_view(),name="ejemplo-dos-crear"),
