@@ -134,6 +134,10 @@ class FamiliarActualizar(UpdateView):
     success_url = "/success_updated_message"
     fields = ["nombre", "direccion", "numero_pasaporte", "fecha_nacimiento"]
 
+class FamiliarDetalle(DetailView):
+    model = Familiar
+    success_url = "/panel-familia"
+
 #automovil
 
 class BuscarAutomovil(View):

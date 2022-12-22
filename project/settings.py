@@ -129,3 +129,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #sirve para bloquear las vistas para el usuario
 #LOGIN_URL="ejemplo-dos-login"
+
+MEDIA_ROOT = os.path.join(BASE_DIR,"media")
+MEDIA_URL="media/"

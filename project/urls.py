@@ -13,19 +13,21 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 from django.views.generic import TemplateView
 from ejemplo.views import (index, saludar_a, sumar,
                            buscar, mostrar_familiares,BuscarFamiliar,
                            AltaFamiliar,ActualizarFamiliar,BorrarFamiliar,
-                           FamiliarList,FamiliarCrear,FamiliarBorrar,FamiliarActualizar,DetailView)
+                           FamiliarList,FamiliarCrear,FamiliarBorrar,FamiliarActualizar,FamiliarDetalle)
 from ejemplo.views import (index,
                            mostrar_automoviles,BuscarAutomovil, AltaAutomovil, ActualizarAutomovil, BorrarAutomovil)
 from ejemplo.views import (index,
                            mostrar_mascotas,BuscarMascotas, AltaMascotas, ActualizarMascotas, BorrarMascotas)
-from ejemplo_dos.views import (index, PostDetalle, PostListar, 
-                            PostCrear, PostBorrar, PostActualizar, UserSignUp,UserLogin, UserLogout)
+from ejemplo_dos.views import (index, PostDetalle, PostList, 
+                            PostCrear, PostBorrar, PostActualizar, UserSignUp,UserLogin, UserLogout,AvatarActualizar)
 from django.contrib.admin.views.decorators import staff_member_required
 
 urlpatterns = [
@@ -44,7 +46,8 @@ urlpatterns = [
     #path('panel-familia/<int:pk>/borrar', FamiliarBorrar.as_view()),
     #path('panel-familia/<int:pk>/actualizar', FamiliarActualizar.as_view()),
     #path("panel-familia"/<int:pk>/detalle",FamiliaDetalle.as.view())
-    #path('success_updated_message/', TemplateView.as_view(template_name="ejemplo/success_updated_message.html")),
+    path('panel-familia/<int:pk>/detalle', FamiliarDetalle.as_view()),
+    path('success_updated_message/', TemplateView.as_view(template_name="ejemplo/success_updated_message.html")),
     
     #Automovil
     path("mis-automoviles/", mostrar_automoviles),
@@ -69,14 +72,16 @@ urlpatterns = [
     #path('panel-mascota/<int:pk>/actualizar', MascotaActualizar.as_view()),
 
     #ejemplo dos clase 141222
-    path("ejemplo-dos/", index,name="ejemplo_dos/index"),
-    path("ejemplo-dos/<int:pk/detalle/", PostDetalle.as_view(),name="ejemplo_dos/detalle"),
-    path("ejemplo-dos/listar/", PostListar.as_view(),name="ejemplo_dos/listar"),
-    path("ejemplo-dos/crear/", PostCrear.as_view(),name="ejemplo_dos/crear"),
-    path("ejemplo-dos/<int:pk/borrar/",PostBorrar.as_view(),name="ejemplo_dos/borrar"),
-    path("ejemplo-dos/<int:pk/actualizar/", PostActualizar.as_view(),name="ejemplo_dos/actualizar"),
+    path("ejemplo-dos/", index),
+    path("ejemplo-dos/<int:pk>/detalle/", PostDetalle.as_view(),name="ejemplo-dos-detalle"),
+    path("ejemplo-dos/listar/", PostList.as_view(),name="ejemplo-dos-listar"),
+    path("ejemplo-dos/crear/", PostCrear.as_view(),name="ejemplo-dos-crear"),
+    path("ejemplo-dos/<int:pk>/borrar/",PostBorrar.as_view(),name="ejemplo-dos-borrar"),
+    path("ejemplo-dos/<int:pk>/actualizar/", PostActualizar.as_view(),name="ejemplo-dos-actualizar"),
     path("ejemplo-dos/signup/", UserSignUp.as_view(),name="ejemplo-dos-signup"),
     path("ejemplo-dos/login/", UserLogin.as_view(),name="ejemplo-dos-login"),
     path("ejemplo-dos/logout/", UserLogout.as_view(),name="ejemplo-dos-logout"),
+    path("ejemplo-dos/avatars/<int_pk>/actualizar",AvatarActualizar.as_view(), name="ejemplo-dos-avatars-actualizar"),
 ]
- 
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
