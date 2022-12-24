@@ -27,7 +27,8 @@ from ejemplo.views import (index,
 from ejemplo.views import (index,
                            mostrar_mascotas,BuscarMascotas, AltaMascotas, ActualizarMascotas, BorrarMascotas)
 from ejemplo_dos.views import (index, PostDetalle, PostList, 
-                            PostCrear, PostBorrar, PostActualizar, UserSignUp,UserLogin, UserLogout,AvatarActualizar)
+                                PostCrear, PostBorrar, PostActualizar,
+                                UserSignUp,UserLogin, UserLogout,AvatarActualizar)
 from django.contrib.admin.views.decorators import staff_member_required
 
 urlpatterns = [
