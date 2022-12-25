@@ -8,14 +8,15 @@ from django.contrib.auth.decorators import login_required
 from ejemplo_dos.forms import UsuarioForm
 from ejemplo_dos.models import Avatar,Post
 
+#login_required
 def index(request):
     return render(request,"ejemplo_dos/index.html", {})
 
 class PostDetalle(DetailView):
     model= Post
 
-#aca protegi las vistas con el requiredmixin
-class PostList(ListView):
+#aca protegi las vistas con el requiredmixin-LoginRequiredMixin
+class PostListar(ListView):
     model= Post
 
 class PostCrear(CreateView):
@@ -38,6 +39,7 @@ class UserSignUp(CreateView):
     template_name= "registration/signup.html"
     success_url=reverse_lazy("ejemplo-dos-listar")
 
+#http://127.0.0.1:8000/ejemplo-dos/login/
 class UserLogin(LoginView):
     next_page= reverse_lazy("ejemplo-dos-listar")
 

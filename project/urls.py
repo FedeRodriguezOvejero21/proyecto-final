@@ -26,7 +26,7 @@ from ejemplo.views import (index,
                            mostrar_automoviles,BuscarAutomovil, AltaAutomovil, ActualizarAutomovil, BorrarAutomovil)
 from ejemplo.views import (index,
                            mostrar_mascotas,BuscarMascotas, AltaMascotas, ActualizarMascotas, BorrarMascotas)
-from ejemplo_dos.views import (index, PostDetalle, PostList, 
+from ejemplo_dos.views import (index, PostDetalle, PostListar, 
                                 PostCrear, PostBorrar, PostActualizar,
                                 UserSignUp,UserLogin, UserLogout,AvatarActualizar)
 from django.contrib.admin.views.decorators import staff_member_required
@@ -75,7 +75,7 @@ urlpatterns = [
     #ejemplo dos clase 141222
     path("ejemplo-dos/", index, name="ejemplo-dos-index"),
     path("ejemplo-dos/<int:pk>/detalle/", PostDetalle.as_view(),name="ejemplo-dos-detalle"),
-    path("ejemplo-dos/listar/", PostList.as_view(),name="ejemplo-dos-listar"),
+    path("ejemplo-dos/listar/", PostListar.as_view(),name="ejemplo-dos-listar"),
     path("ejemplo-dos/crear/", PostCrear.as_view(),name="ejemplo-dos-crear"),
     path("ejemplo-dos/<int:pk>/borrar/",PostBorrar.as_view(),name="ejemplo-dos-borrar"),
     path("ejemplo-dos/<int:pk>/actualizar/", PostActualizar.as_view(),name="ejemplo-dos-actualizar"),
