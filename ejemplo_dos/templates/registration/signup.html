@@ -4,7 +4,7 @@
     <h2> Registrar Usuario</h2>
     <form method="POST">
         {% csrf_token %}
-        {{ form.as.p }}
+        {{ form.as_p }}
         <input type= "submit" value="Registrarme">
     </form>
 {% endblock %}
