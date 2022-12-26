@@ -18,6 +18,9 @@
             <div class="container">   
                 <a class="navbar-brand" href="{% url 'ejemplo-dos-index' %}">
                     <img src="{{user.avatar.imagen.url}}" height="64">
+                    {% if user.is_authenticated%}
+                      Hola, {{user.first_name}}
+                    {% endif%}
                     Start Bootstrap
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>

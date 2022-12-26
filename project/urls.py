@@ -28,7 +28,7 @@ from ejemplo.views import (index,
                            mostrar_mascotas,BuscarMascotas, AltaMascotas, ActualizarMascotas, BorrarMascotas)
 from ejemplo_dos.views import (index, PostDetalle, PostListar, 
                                 PostCrear, PostBorrar, PostActualizar,
-                                UserSignUp,UserLogin, UserLogout,AvatarActualizar)
+                                UserSignUp,UserLogin, UserLogout,AvatarActualizar,UserActualizar)
 from django.contrib.admin.views.decorators import staff_member_required
 
 urlpatterns = [
@@ -83,6 +83,7 @@ urlpatterns = [
     path("ejemplo-dos/login/", UserLogin.as_view(),name="ejemplo-dos-login"),
     path("ejemplo-dos/logout/", UserLogout.as_view(),name="ejemplo-dos-logout"),
     path("ejemplo-dos/avatars/<int_pk>/actualizar/",AvatarActualizar.as_view(), name="ejemplo-dos-avatars-actualizar"),
+    path("ejemplo-dos/users/<int_pk>/actualizar/",UserActualizar.as_view(), name="ejemplo-dos-user-actualizar"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
