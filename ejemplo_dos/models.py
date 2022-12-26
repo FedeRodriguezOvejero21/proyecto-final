@@ -6,8 +6,8 @@ class Post(models.Model):
     sub_titulo=models.CharField(max_length=100)
     texto=models.TextField(max_length=3000)
     publicado_el = models.DateField()
-    imagen=models.ImageField
+    imagen=models.ImageField(upload_to="posteos", null="True",blank=True)
 
 class Avatar(models.Model):
-    User= models.OneToOneField(to=User, on_delete=models.CASCADE, related_name="avatar")
+    user= models.OneToOneField(to=User, on_delete=models.CASCADE, related_name="avatar")
     imagen=models.ImageField(upload_to="avatares", null="True",blank=True)

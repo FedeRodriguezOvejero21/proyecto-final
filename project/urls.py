@@ -82,7 +82,7 @@ urlpatterns = [
     path("ejemplo-dos/signup/", UserSignUp.as_view(),name="ejemplo-dos-signup"),
     path("ejemplo-dos/login/", UserLogin.as_view(),name="ejemplo-dos-login"),
     path("ejemplo-dos/logout/", UserLogout.as_view(),name="ejemplo-dos-logout"),
-    path("ejemplo-dos/avatars/<int_pk>/actualizar",AvatarActualizar.as_view(), name="ejemplo-dos-avatars-actualizar"),
+    path("ejemplo-dos/avatars/<int_pk>/actualizar/",AvatarActualizar.as_view(), name="ejemplo-dos-avatars-actualizar"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -2,6 +2,7 @@
 
 {% block contenido %}
 <a href = "{% url "ejemplo-dos-crear" %}" > Crear Post</a>
+<a href = "{% url "ejemplo-dos-avatars-actualizar" user.id %}" > Actualizar Avatar</a>
 <ul>
 {% for post in object_list %}
     <li> 
