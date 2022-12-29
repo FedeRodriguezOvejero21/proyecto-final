@@ -1,17 +1,21 @@
 {% extends 'ejemplo_dos/base.html' %}
 
 {% block contenido %}
-<a href = "{% url "ejemplo-dos-crear" %}" > Crear Post</a>
-<a href = "{% url "ejemplo-dos-avatars-actualizar" user.id %}" >Actualizar Avatar</a>
-<a href = "{% url "ejemplo-dos-users-actualizar" user.id %}" >Actualizar Profile</a>
-<a href = "{% url "ejemplo-dos-mensajes-listar" user.id %}" >Mensajes</a>
+{% if user.is_authenticated %}
+    <a href="{% url 'ejemplo-dos-crear' %}">Crear Post</a>
+    <a href="{% url 'ejemplo-dos-mensajes-listar' %}">Ver Mensajes</a>
+    <a href="{% url 'ejemplo-dos-users-actualizar' user.id %}">Actualizar User</a>
+    <a href="{% url 'ejemplo-dos-avatars-actualizar' user.id %}">Actualizar Avatar</a>
+{% endif %}
 <ul>
 {% for post in object_list %}
-    <li> 
-        {{post.publicado_el}} -- {{post.titulo}} 
+    <li>
+        {{post.publicado_el}} - - {{post.titulo}} 
+        {% if user.is_superuser %}
             <a href="{% url 'ejemplo-dos-borrar' post.id %}">Borrar</a>
-            <a href="{% url 'ejemplo-dos-actualizar' post.id %}">Actualizar</a>
-            <a href="{% url 'ejemplo-dos-detalle' post.id %}">Ver</a>
+            <a href="{% url 'ejemplo-dos-actualizar' user.id %}">Actualizar</a>
+        {% endif %}
+        <a href="{% url 'ejemplo-dos-detalle' post.id %}">Ver</a>
     </li>
 {% endfor %}
 </ul>

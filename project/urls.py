@@ -33,7 +33,7 @@ from ejemplo_dos.views import (index, PostDetalle, PostListar,
 from django.contrib.admin.views.decorators import staff_member_required
 
 urlpatterns = [
-    #path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     #path("saludar/", index),
     #path("saludar-a/<nombre>/", saludar_a),
     #path("sumar/<int:a>/<int:b>/", sumar),
@@ -84,7 +84,7 @@ urlpatterns = [
     path("ejemplo-dos/login/", UserLogin.as_view(),name="ejemplo-dos-login"),
     path("ejemplo-dos/logout/", UserLogout.as_view(),name="ejemplo-dos-logout"),
     path("ejemplo-dos/avatars/<int:pk>/actualizar/",AvatarActualizar.as_view(), name="ejemplo-dos-avatars-actualizar"),
-    path("ejemplo-dos/users/<int:pk>/actualizar/",UserActualizar.as_view(), name="ejemplo-dos-user-actualizar"),
+    path("ejemplo-dos/users/<int:pk>/actualizar/",UserActualizar.as_view(), name="ejemplo-dos-users-actualizar"),
     path("ejemplo-dos/mensajes/crear/", MensajeCrear.as_view(), name="ejemplo-dos-mensajes-crear"),
     path("ejemplo-dos/mensajes/<int:pk/detalle/", MensajeDetalle.as_view(), name="ejemplo-dos-mensajes-detalle"),
     path("ejemplo-dos/mensajes/listar/", MensajeListar.as_view(), name="ejemplo-dos-mensajes-listar"),
