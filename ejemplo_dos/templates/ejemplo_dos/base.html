@@ -20,7 +20,7 @@
                     <img src="{{user.avatar.imagen.url}}" height="64">
                     {% if user.is_authenticated%}
                       Hola, {{user.first_name}}
-                    {% endif%}
+                    {% endif %}
                     Start Bootstrap
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -30,10 +30,13 @@
                         <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url "ejemplo-dos-mensajes-crear" %}">Contact</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url "ejemplo-dos-listar" %}">Admin Blog</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url "ejemplo-dos-signup" %}">Registrarse</a></li> 
-                        <li class="nav-item"><a class="nav-link" href="{% url "ejemplo-dos-login" %}">Ingresar</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url "ejemplo-dos-listar" %}">Admin Blog</a></li> 
-                        <li class="nav-item"><a class="nav-link" href="{% url "ejemplo-dos-logout" %}">Salir</a></li> 
+                        {%if user.is_authenticated %}
+                            <li class="nav-item"><a class="nav-link" href="{% url "ejemplo-dos-logout" %}">Salir</a></li>
+                        {% else %} 
+                            <li class="nav-item"><a class="nav-link" href="{% url "ejemplo-dos-login" %}">Ingresar</a></li> 
+                        {% endif %}    
                     </ul>
                 </div>
             </div>
