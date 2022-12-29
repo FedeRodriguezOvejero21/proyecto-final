@@ -11,11 +11,9 @@
 {% for post in object_list %}
     <li>
         {{post.publicado_el}} - - {{post.titulo}} 
-        {% if user.is_superuser %}
             <a href="{% url 'ejemplo-dos-borrar' post.id %}">Borrar</a>
-            <a href="{% url 'ejemplo-dos-actualizar' user.id %}">Actualizar</a>
-        {% endif %}
-        <a href="{% url 'ejemplo-dos-detalle' post.id %}">Ver</a>
+            <a href="{% url 'ejemplo-dos-actualizar' post.id %}">Actualizar</a>
+            <a href="{% url 'ejemplo-dos-detalle' post.id %}">Ver</a>
     </li>
 {% endfor %}
 </ul>

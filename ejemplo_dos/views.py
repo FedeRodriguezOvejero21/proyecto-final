@@ -42,7 +42,6 @@ class UserSignUp(CreateView):
     template_name= "registration/signup.html"
     success_url=reverse_lazy("ejemplo-dos-listar")
 
-#http://127.0.0.1:8000/ejemplo-dos/login/
 class UserLogin(LoginView):
     next_page= reverse_lazy("ejemplo-dos-listar")
 
