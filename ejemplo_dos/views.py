@@ -67,9 +67,9 @@ class MensajeBorrar(DeleteView):
 class AvatarActualizar (UpdateView):
     model=Avatar
     fields=["imagen"]
-    succss_url= reverse_lazy("ejemplo-dos-listar")
+    success_url= reverse_lazy("ejemplo-dos-listar")
 
 class UserActualizar(UpdateView):
     model = User
-    field = ["first_name","last_name","email"]
-    succss_url= reverse_lazy("ejemplo-dos-listar")
+    fields = ["first_name","last_name","email"]
+    success_url= reverse_lazy("ejemplo-dos-listar")
