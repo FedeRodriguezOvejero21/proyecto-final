@@ -86,7 +86,7 @@ urlpatterns = [
     path("ejemplo-dos/avatars/<int:pk>/actualizar/",AvatarActualizar.as_view(), name="ejemplo-dos-avatars-actualizar"),
     path("ejemplo-dos/users/<int:pk>/actualizar/",UserActualizar.as_view(), name="ejemplo-dos-users-actualizar"),
     path("ejemplo-dos/mensajes/crear/", MensajeCrear.as_view(), name="ejemplo-dos-mensajes-crear"),
-    path("ejemplo-dos/mensajes/<int:pk/detalle/", MensajeDetalle.as_view(), name="ejemplo-dos-mensajes-detalle"),
+    path("ejemplo-dos/mensajes/<int:pk>/detalle/", MensajeDetalle.as_view(), name="ejemplo-dos-mensajes-detalle"),
     path("ejemplo-dos/mensajes/listar/", MensajeListar.as_view(), name="ejemplo-dos-mensajes-listar"),
 ]
 
