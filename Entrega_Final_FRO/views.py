@@ -75,4 +75,4 @@ class UserActualizar(UpdateView):
     success_url= reverse_lazy("Entrega_Final_FRO-listar")
 
 def about(request):
-    return render(request, 'Entrega_Final_FRO-about.html')
+    return render(request, 'Entrega_Final_FRO-about')

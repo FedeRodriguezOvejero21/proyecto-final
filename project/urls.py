@@ -29,7 +29,7 @@ from ejemplo.views import (index,
 from Entrega_Final_FRO.views import (index, PostDetalle, PostListar, 
                                 PostCrear, PostBorrar, PostActualizar,
                                 UserSignUp,UserLogin, UserLogout,
-                                AvatarActualizar,UserActualizar,MensajeCrear,MensajeListar,MensajeDetalle)
+                                AvatarActualizar,UserActualizar,MensajeCrear,MensajeListar,MensajeDetalle,about)
 from django.contrib.admin.views.decorators import staff_member_required
 
 urlpatterns = [
@@ -88,6 +88,7 @@ urlpatterns = [
     path("Entrega_Final_FRO/mensajes/crear/", MensajeCrear.as_view(), name="Entrega_Final_FRO-mensajes-crear"),
     path("Entrega_Final_FRO/mensajes/<int:pk>/detalle/", MensajeDetalle.as_view(), name="Entrega_Final_FRO-mensajes-detalle"),
     path("Entrega_Final_FRO/mensajes/listar/", MensajeListar.as_view(), name="Entrega_Final_FRO-mensajes-listar"),
+    path("Entrega_Final_FRO/about/",about.views(),name="about"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
