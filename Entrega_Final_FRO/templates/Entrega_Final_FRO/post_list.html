@@ -2,22 +2,22 @@
 
 {% block contenido %}
 {% if user.is_authenticated %}
-    <a href="{% url 'Entrega_Final_FRO-crear' %}">Crear Post</a>
+    <a href="{% url 'Entrega-Final-FRO-crear' %}">Crear Post</a>
     {% if user.avatar.imagen %}
-        <a href="{% url 'Entrega_Final_FRO-avatars-actualizar' user.avatar.id %}">Actualizar Avatar</a>
+        <a href="{% url 'Entrega-Final-FRO-avatars-actualizar' user.avatar.id %}">Actualizar Avatar</a>
     {% endif %}
-    <a href="{% url 'Entrega_Final_FRO-users-actualizar' user.id %}">Actualizar User</a>
-    <a href="{% url 'Entrega_Final_FRO-mensajes-listar' %}">Ver Mensajes</a>
+    <a href="{% url 'Entrega-Final-FRO-users-actualizar' user.id %}">Actualizar User</a>
+    <a href="{% url 'Entrega-Final-FRO-mensajes-listar' %}">Ver Mensajes</a>
 {% endif %}
 <ul>
 {% for post in object_list %}
     <li>
         {{post.publicado_el}} - - {{post.titulo}}
         {% if user.is_authenticated %} 
-            <a href="{% url 'Entrega_Final_FRO-borrar' post.id %}">Borrar</a>
-            <a href="{% url 'Entrega_Final_FRO-actualizar' post.id %}">Actualizar</a>
+            <a href="{% url 'Entrega-Final-FRO-borrar' post.id %}">Borrar</a>
+            <a href="{% url 'Entrega-Final-FRO-actualizar' post.id %}">Actualizar</a>
         {% endif %}   
-            <a href="{% url 'Entrega_Final_FRO-detalle' post.id %}">Ver</a>
+            <a href="{% url 'Entrega-Final-FRO-detalle' post.id %}">Ver</a>
     </li>
 {% endfor %}
 </ul>

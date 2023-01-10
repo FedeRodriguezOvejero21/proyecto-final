@@ -5,7 +5,7 @@
 {% for mensaje in object_list %}
     <li>
         {{mensaje.enviado_el}} -- {{mensaje.email}} -- {{mensaje.nombre}} 
-        <a href="{% url "Entrega_Final_FRO-mensajes-detalle" mensaje.id %}">Ver</a> 
+        <a href="{% url "Entrega-Final-FRO-mensajes-detalle" mensaje.id %}">Ver</a> 
     </li>
 {% endfor %}
 </ul>

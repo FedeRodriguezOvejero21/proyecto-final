@@ -24,29 +24,29 @@ class PostListar(ListView):
 
 class PostCrear(CreateView):
     model= Post
-    success_url= reverse_lazy ("Entrega_Final_FRO-listar")
+    success_url= reverse_lazy ("Entrega-Final-FRO-listar")
     fields= "__all__"
 
 class PostBorrar(DeleteView):
     model= Post
-    success_url= reverse_lazy ("Entrega_Final_FRO-listar")
+    success_url= reverse_lazy ("Entrega-Final-FRO-listar")
     fields= "__all__"
 
 class PostActualizar(UpdateView):
     model= Post
-    success_url= reverse_lazy ("Entrega_Final_FRO-listar")
+    success_url= reverse_lazy ("Entrega-Final-FRO-listar")
     fields= "__all__"
 
 class UserSignUp(CreateView):
     form_class=UsuarioForm
     template_name= "registration/signup.html"
-    success_url=reverse_lazy("Entrega_Final_FRO-listar")
+    success_url=reverse_lazy("Entrega-Final-FRO-listar")
 
 class UserLogin(LoginView):
-    next_page= reverse_lazy("Entrega_Final_FRO-listar")
+    next_page= reverse_lazy("Entrega-Final-FRO-listar")
 
 class UserLogout(LogoutView):
-    next_page= reverse_lazy("Entrega_Final_FRO-listar")
+    next_page= reverse_lazy("Entrega-Final-FRO-listar")
 
 class MensajeDetalle(DetailView):
     model = Mensaje
@@ -56,20 +56,20 @@ class MensajeListar(ListView):
 
 class MensajeCrear(CreateView):
     model = Mensaje
-    success_url = reverse_lazy("Entrega_Final_FRO-mensajes-crear")
+    success_url = reverse_lazy("Entrega-Final-FRO-mensajes-crear")
     fields = ['nombre', 'email', 'texto']
     success_message = "Mensaje de contacto enviado!!"
 
 class MensajeBorrar(DeleteView):
     model = Mensaje
-    success_url = reverse_lazy("Entrega_Final_FRO-mensajes-listar")
+    success_url = reverse_lazy("Entrega-Final-FRO-mensajes-listar")
 
 class AvatarActualizar (UpdateView):
     model=Avatar
     fields=["imagen"]
-    success_url= reverse_lazy("Entrega_Final_FRO-listar")
+    success_url= reverse_lazy("Entrega-Final-FRO-listar")
 
 class UserActualizar(UpdateView):
     model = User
     fields = ["first_name","last_name","email"]
-    success_url= reverse_lazy("Entrega_Final_FRO-listar")
+    success_url= reverse_lazy("Entrega-Final-FRO-listar")
