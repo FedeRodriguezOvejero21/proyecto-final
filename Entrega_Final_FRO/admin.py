@@ -1,4 +1,4 @@
 from django.contrib import admin
-from ejemplo_dos.models import Avatar
+from Entrega_Final_FRO.models import Avatar
 
 admin.site.register (Avatar)

@@ -26,7 +26,7 @@ from ejemplo.views import (index,
                            mostrar_automoviles,BuscarAutomovil, AltaAutomovil, ActualizarAutomovil, BorrarAutomovil)
 from ejemplo.views import (index,
                            mostrar_mascotas,BuscarMascotas, AltaMascotas, ActualizarMascotas, BorrarMascotas)
-from ejemplo_dos.views import (index, PostDetalle, PostListar, 
+from Entrega_Final_FRO.views import (index, PostDetalle, PostListar, 
                                 PostCrear, PostBorrar, PostActualizar,
                                 UserSignUp,UserLogin, UserLogout,
                                 AvatarActualizar,UserActualizar,MensajeCrear,MensajeListar,MensajeDetalle)
@@ -74,20 +74,20 @@ urlpatterns = [
     #path('panel-mascota/<int:pk>/actualizar', MascotaActualizar.as_view()),
 
     #ejemplo dos clase 141222
-    path("ejemplo-dos/", index, name="ejemplo-dos-index"),
-    path("ejemplo-dos/<int:pk>/detalle/", PostDetalle.as_view(),name="ejemplo-dos-detalle"),
-    path("ejemplo-dos/listar/", PostListar.as_view(),name="ejemplo-dos-listar"),
-    path("ejemplo-dos/crear/", PostCrear.as_view(),name="ejemplo-dos-crear"),
-    path("ejemplo-dos/<int:pk>/borrar/",PostBorrar.as_view(),name="ejemplo-dos-borrar"),
-    path("ejemplo-dos/<int:pk>/actualizar/", PostActualizar.as_view(),name="ejemplo-dos-actualizar"),
-    path("ejemplo-dos/signup/", UserSignUp.as_view(),name="ejemplo-dos-signup"),
-    path("ejemplo-dos/login/", UserLogin.as_view(),name="ejemplo-dos-login"),
-    path("ejemplo-dos/logout/", UserLogout.as_view(),name="ejemplo-dos-logout"),
-    path("ejemplo-dos/avatars/<int:pk>/actualizar/",AvatarActualizar.as_view(), name="ejemplo-dos-avatars-actualizar"),
-    path("ejemplo-dos/users/<int:pk>/actualizar/",UserActualizar.as_view(), name="ejemplo-dos-users-actualizar"),
-    path("ejemplo-dos/mensajes/crear/", MensajeCrear.as_view(), name="ejemplo-dos-mensajes-crear"),
-    path("ejemplo-dos/mensajes/<int:pk>/detalle/", MensajeDetalle.as_view(), name="ejemplo-dos-mensajes-detalle"),
-    path("ejemplo-dos/mensajes/listar/", MensajeListar.as_view(), name="ejemplo-dos-mensajes-listar"),
+    path("Entrega_Final_FRO/", index, name="Entrega_Final_FRO-index"),
+    path("Entrega_Final_FRO/<int:pk>/detalle/", PostDetalle.as_view(),name="Entrega_Final_FRO-detalle"),
+    path("Entrega_Final_FRO/listar/", PostListar.as_view(),name="Entrega_Final_FRO-listar"),
+    path("Entrega_Final_FRO/crear/", PostCrear.as_view(),name="Entrega_Final_FRO-crear"),
+    path("Entrega_Final_FRO/<int:pk>/borrar/",PostBorrar.as_view(),name="Entrega_Final_FRO-borrar"),
+    path("Entrega_Final_FRO/<int:pk>/actualizar/", PostActualizar.as_view(),name="Entrega_Final_FRO-actualizar"),
+    path("Entrega_Final_FRO/signup/", UserSignUp.as_view(),name="Entrega_Final_FRO-signup"),
+    path("Entrega_Final_FRO/login/", UserLogin.as_view(),name="Entrega_Final_FRO-login"),
+    path("Entrega_Final_FRO/logout/", UserLogout.as_view(),name="Entrega_Final_FRO-logout"),
+    path("Entrega_Final_FRO/avatars/<int:pk>/actualizar/",AvatarActualizar.as_view(), name="Entrega_Final_FRO-avatars-actualizar"),
+    path("Entrega_Final_FRO/users/<int:pk>/actualizar/",UserActualizar.as_view(), name="Entrega_Final_FROusers-actualizar"),
+    path("Entrega_Final_FRO/mensajes/crear/", MensajeCrear.as_view(), name="Entrega_Final_FRO-mensajes-crear"),
+    path("Entrega_Final_FRO/mensajes/<int:pk>/detalle/", MensajeDetalle.as_view(), name="Entrega_Final_FRO-mensajes-detalle"),
+    path("Entrega_Final_FRO/mensajes/listar/", MensajeListar.as_view(), name="Entrega_Final_FRO-mensajes-listar"),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

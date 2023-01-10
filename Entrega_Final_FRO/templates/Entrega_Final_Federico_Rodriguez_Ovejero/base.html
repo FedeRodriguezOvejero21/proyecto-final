@@ -10,7 +10,7 @@
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{% static "ejemplo_dos/css/styles.css" %}" rel="stylesheet" />
+        <link href="{% static "Entrega_Final_FRO/css/styles.css" %}" rel="stylesheet" />
     </head>
     <body>
         <!-- Responsive navbar-->
@@ -28,14 +28,14 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url "ejemplo-dos-mensajes-crear" %}">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url "Entrega_Final_FRO-mensajes-crear" %}">Contact</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Blog</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url "ejemplo-dos-signup" %}">Registrarse</a></li> 
+                        <li class="nav-item"><a class="nav-link" href="{% url "Entrega_Final_FRO-signup" %}">Registrarse</a></li> 
                         {%if user.is_authenticated %}
-                            <li class="nav-item"><a class="nav-link" href="{% url "ejemplo-dos-listar" %}">Admin Blog</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url "ejemplo-dos-logout" %}">Salir</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url "Entrega_Final_FRO-listar" %}">Admin Blog</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{% url "Entrega_Final_FRO-logout" %}">Salir</a></li>
                         {% else %} 
-                            <li class="nav-item"><a class="nav-link" href="{% url "ejemplo-dos-login" %}">Ingresar</a></li> 
+                            <li class="nav-item"><a class="nav-link" href="{% url "Entrega_Final_FRO-login" %}">Ingresar</a></li> 
                         {% endif %}    
                     </ul>
                 </div>

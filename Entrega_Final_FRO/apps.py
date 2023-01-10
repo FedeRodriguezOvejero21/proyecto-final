@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class EjemploDosConfig(AppConfig):
+class EntregaFinalFROConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'ejemplo_dos'
+    name = 'Entrega_Final_FRO'
