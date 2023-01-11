@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ejemplo.apps.EjemploConfig',
-    "Entrega_Final_FRO.apps.EntregaFinalConfig", #nueva app
+    "ejemplo_dos.apps.EntregaFinalConfig", #nueva app
 ]
 
 MIDDLEWARE = [
